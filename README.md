@@ -14,3 +14,13 @@ git clone https://github.com/julilan/symfony-team-todo.git
 composer install
 ```
 - Restart Docker and check phpMyAdmin for tododb
+
+## 02: TODO application using Symfony
+
+The idea of this mini-project 02 is to write Symfony code to Create a basic TODO application using Symfony and MySQL.
+
+- TODO application must do all the basic operations, e.g. creating, reading, deleting etc.
+- Collaborate with your team members
+- Make sure everyone in team contributes
+- Choose your own layout and design (CSS, UI/UX)
+- Optional: Any simple additional features or new things you want to add (but do not overdo it)
