@@ -14,6 +14,13 @@ git clone https://github.com/julilan/symfony-team-todo.git
 composer install
 ```
 - Restart Docker and check phpMyAdmin for tododb
+- cd .. back to MAMP and go inside Docker container (use docker ps to check id for symfony-mamp-www) and run migrate
+```
+docker exec -it id_here /bin/sh
+cd web
+php bin/console doctrine:migrations:migrate
+```
+- Find app at http://localhost:8007/todo
 
 ## 02: TODO application using Symfony
 
