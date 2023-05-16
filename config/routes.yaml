@@ -3,11 +3,3 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
-
-show_todo:
-    path: /show/{id}
-    controller: App\Controller\TodoCRUDController::show
-
-update_todo:
-    path: /update/{id}
-    controller: App\Controller\TodoCRUDController::update

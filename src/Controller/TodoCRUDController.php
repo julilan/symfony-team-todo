@@ -34,14 +34,14 @@ class TodoCRUDController extends AbstractController
     }
 
     #[Route(path: '/show/{id}', name: 'show_todo')]
-    public function show(EntityManagerInterface $em, int $id)
+    public function show(EntityManagerInterface $em, $id)
     {
         $task = $em->getRepository(Task::class)->find($id);
         return $this->render('todo/show.html.twig', ['task' => $task]);
     }
 
     #[Route(path: '/update/{id}', name: 'update_todo', methods: ['POST'])]
-    public function update(Request $request, int $id, ManagerRegistry $doctrine): Response
+    public function update(Request $request, $id, ManagerRegistry $doctrine): Response
     {
         $todo = trim($request->get('todo'));
         if (empty($todo)) {
