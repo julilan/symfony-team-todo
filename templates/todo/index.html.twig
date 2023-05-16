@@ -7,7 +7,7 @@
 <body>
     <header>
         <h1>Todo App</h1>
-        <form action={{ path('create_todo') }} method="POST">
+        <form action="{{ path('create_todo') }}" method="POST">
         <input type="text" name="todo" placeholder="My new todo..">
         <button type="submit">Add todo</button>
         </form>
@@ -27,8 +27,8 @@
                 <td>{{task.id}}</td>
                 <td>{{task.todo}}</td>
                 <td>
-                <a href="#"><span>edit</span></a>
-                <a href="#"><span>delete</span></a>
+                <a href="{{ path('show_todo', {id: task.id}) }}"><span>edit</span></a>
+                <a href="#"><span>remove</span></a>
                 </td>
             </tr>
             {% endfor %}

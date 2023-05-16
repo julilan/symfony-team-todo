@@ -32,4 +32,26 @@ class TodoCRUDController extends AbstractController
         $entityManager->flush();
         return $this->redirectToRoute('app_todo_crud');
     }
+
+    #[Route(path: '/show/{id}', name: 'show_todo')]
+    public function show(EntityManagerInterface $em, int $id)
+    {
+        $task = $em->getRepository(Task::class)->find($id);
+        return $this->render('todo/show.html.twig', ['task' => $task]);
+    }
+
+    #[Route(path: '/update/{id}', name: 'update_todo', methods: ['POST'])]
+    public function update(Request $request, int $id, ManagerRegistry $doctrine): Response
+    {
+        $todo = trim($request->get('todo'));
+        if (empty($todo)) {
+            return $this->redirectToRoute('show_todo', ['id' => $id]);
+        }
+
+        $entityManager = $doctrine->getManager();
+        $task = $entityManager->getRepository(Task::class)->find($id);
+        $task->setTodo($todo);
+        $entityManager->flush();
+        return $this->redirectToRoute('app_todo_crud');
+    }
 }
