@@ -1,5 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header{
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+}
+main{
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+fieldset{
+    width: fit-content;
+    padding: 1rem;
+    margin: 2rem 0;
+}
+
 input {
     width: 400px;
+    font-family: inherit;
 }
 
 input, button {
@@ -9,12 +38,12 @@ input, button {
 
 table {
     border-collapse: collapse;
-    margin-bottom: 1em;
 }
 
 table,th,td {
     border:solid black 1px;
     padding: 0.5em;
+    margin: 1rem 0;
 }
 thead {
     background-color: lightskyblue;

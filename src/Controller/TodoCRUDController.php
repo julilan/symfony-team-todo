@@ -12,7 +12,7 @@ use App\Entity\Task;
 
 class TodoCRUDController extends AbstractController
 {
-    #[Route('/todo', name: 'app_todo_crud')]
+    #[Route('/', name: 'app_todo_crud')]
     public function index(EntityManagerInterface $em)
     {
         $tasks = $em->getRepository(Task::class)->findAll();

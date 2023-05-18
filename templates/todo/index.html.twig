@@ -8,11 +8,16 @@
 	<body>
 		<header>
 			<h1>Todo App</h1>
-			<form action="{{ path('create_todo') }}" method="POST">
-				<input type="text" name="todo" placeholder="My new todo..">
-				<button type="submit">Add todo</button>
-			</form>
 		</header>
+		<main>
+			<form action="{{ path('create_todo') }}" method="POST">
+				<fieldset>
+				<legend>Add todo</legend>
+				<input type="text" name="todo" placeholder="My new todo..">
+				<button type="submit">Add</button>
+				</fieldset>
+			</form>
+		
 		<h2>My todos</h2>
 		<table>
 			<thead>
@@ -25,7 +30,8 @@
 			<tbody>
 				{% for task in tasks %}
 					<tr>
-						<td>{{task.id}}</td>
+						{# <td>{{task.id}}</td> #}
+						<td>{{loop.index0 + 1}}</td>
 						<td>{{task.todo}}</td>
 						<td>
 							<a href="{{ path('show_todo', {id: task.id}) }}">
@@ -39,6 +45,7 @@
 				{% endfor %}
 			</tbody>
 		</table>
+		</main>
 	</body>
 
 {% endblock %}
