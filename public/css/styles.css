@@ -10,25 +10,49 @@ header{
     background-color: #000;
     color: #fff;
     padding: 1rem;
+    position: sticky;
+    top: 0;
 }
+body{
+    background-color: skyblue;
+}
+
 main{
     margin: 2rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    background-color: #1f1f1f;
+    border-radius: 5px;
+    padding: 1rem;
 
 
 }
+
+form{
+    display: flex;
+}
 fieldset{
     width: fit-content;
+    display: flex;
     padding: 1rem;
     margin: 2rem 0;
+    border-radius: 5px;
+}
+legend, h2{
+    color: #fff;
 }
 
 input {
     width: 400px;
     font-family: inherit;
+}
+
+@media only screen and (max-width: 591px){
+    input{
+        width: fit-content;
+    }
 }
 
 input, button {
@@ -38,13 +62,49 @@ input, button {
 
 table {
     border-collapse: collapse;
+    max-width: 800px;
+    
 }
 
 table,th,td {
-    border:solid black 1px;
-    padding: 0.5em;
+    border:solid #fff 1px;
+    padding: 1rem;
     margin: 1rem 0;
+
 }
+table td{
+    color: #fff;
+}
+
 thead {
     background-color: lightskyblue;
+}
+
+.button{
+    padding: 0.6rem;
+    border-radius: 20px;
+    margin: 0 1rem;
+}
+
+.add-button{
+    background-color: green;
+    color: #fff;
+    
+}
+
+.edit-todo{
+    color: yellow;
+}
+
+.delete{
+    color: red;
+}
+
+a{
+    text-decoration: none;
+}
+.actions-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

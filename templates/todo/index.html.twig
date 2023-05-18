@@ -14,7 +14,7 @@
 				<fieldset>
 				<legend>Add todo</legend>
 				<input type="text" name="todo" placeholder="My new todo..">
-				<button type="submit">Add</button>
+				<button class='button add-button'type="submit">Add</button>
 				</fieldset>
 			</form>
 		
@@ -24,7 +24,7 @@
 				<tr>
 					<th>#</th>
 					<th>Todo</th>
-					<th>Actions</th>
+					<th class='todo-actions'>Actions</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -34,12 +34,20 @@
 						<td>{{loop.index0 + 1}}</td>
 						<td>{{task.todo}}</td>
 						<td>
+						<div class='actions-container'>
 							<a href="{{ path('show_todo', {id: task.id}) }}">
-								<span>edit</span>
+								{# <span class='button edit-button'>edit</span> #}
+								<span class="edit-todo material-symbols-outlined">
+								edit_note
+								</span>
 							</a>
 							<a onclick="return confirm('Are you sure to delete?')" href="{{path ('delete_todo',{'id':task.id})}}">
-								<span>remove</span>
+								{# <span class=' button remove-button'>remove</span> #}
+								<span class="delete material-symbols-outlined">
+								delete
+								</span>
 							</a>
+						</div>
 						</td>
 					</tr>
 				{% endfor %}
