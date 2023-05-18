@@ -1,6 +1,8 @@
 # TODO App with Symfony
 
-## Usage
+A basic TODO App with Symfony and MySQL using Doctrine.
+
+## Setup
 
 - Have Docker running for Symfony-MAMP
 - Do git clone inside Symfony-MAMP folder:
@@ -20,13 +22,22 @@ docker exec -it id_here /bin/sh
 cd web
 php bin/console doctrine:migrations:migrate
 ```
+## Usage
 
-## 02: TODO application using Symfony
+- App home: http://localhost:8007/ 
 
-The idea of this mini-project 02 is to write Symfony code to Create a basic TODO application using Symfony and MySQL.
+Users can:
+- Create a new todo
+- See added todos listed on homepage
+- Edit todo
+- Delete todo
 
-- TODO application must do all the basic operations, e.g. creating, reading, deleting etc.
-- Collaborate with your team members
-- Make sure everyone in team contributes
-- Choose your own layout and design (CSS, UI/UX)
-- Optional: Any simple additional features or new things you want to add (but do not overdo it)
+## Acknowledgments
+
+- This app uses [Symfony-MAMP](https://github.com/kalwar/Symfony-MAMP) by [@kalwar](https://github.com/kalwar)
+
+## Authors
+
+- Michael Akerele [@stacknatic](https://github.com/stacknatic)
+- Julianna Molnár [@julilan](https://github.com/julilan)
+- Sahil Thapa [@sahilt2](https://github.com/sahilt2)
