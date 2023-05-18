@@ -37,6 +37,7 @@ class TodoCRUDController extends AbstractController
     public function show(EntityManagerInterface $em, $id)
     {
         $task = $em->getRepository(Task::class)->find($id);
+        if (!$task) return $this->redirectToRoute('app_todo_crud');
         return $this->render('todo/show.html.twig', ['task' => $task]);
     }
 
@@ -54,15 +55,15 @@ class TodoCRUDController extends AbstractController
         $entityManager->flush();
         return $this->redirectToRoute('app_todo_crud');
     }
-    #[Route(path:'/delete/{id}', name: 'delete_todo')]
+    #[Route(path: '/delete/{id}', name: 'delete_todo')]
     public function delete(int $id, ManagerRegistry $doctrine): Response
     {
         $em = $doctrine->getManager();
         $id = $em->getRepository(Task::class)->find($id);
+        if (!$id) return $this->redirectToRoute('app_todo_crud');
         $em->remove($id);
         $em->flush();
 
         return $this->redirectToRoute("app_todo_crud");
-
     }
 }
