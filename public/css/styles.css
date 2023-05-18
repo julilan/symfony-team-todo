@@ -86,7 +86,7 @@ thead {
     margin: 0 1rem;
 }
 
-.add-button{
+.add-button, .edit-todo-button{
     background-color: green;
     color: #fff;
     
@@ -94,6 +94,10 @@ thead {
 
 .edit-todo{
     color: yellow;
+}
+.back-button{
+    background-color: yellow;;
+    color: #000;
 }
 
 .delete{
