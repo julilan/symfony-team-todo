@@ -13,7 +13,7 @@
 			<form action="{{ path('create_todo') }}" method="POST">
 				<fieldset>
 				<legend>Add todo</legend>
-				<input type="text" name="todo" placeholder="My new todo..">
+				<input type="text" name="todo" placeholder="My new todo.." maxlength='255'>
 				<button class='button add-button'type="submit">Add</button>
 				</fieldset>
 			</form>

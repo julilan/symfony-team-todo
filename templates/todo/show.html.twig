@@ -12,7 +12,7 @@
         <form action="{{ path('update_todo', {'id': task.id}) }}" method="POST">
         <fieldset>
         <legend>Edit todo</legend>
-            <input type="text" name="todo" value="{{task.todo}}" required>
+            <input type="text" name="todo" value="{{task.todo}}"  maxlength='255'>
             <button type="submit" class='button edit-todo-button'>Submit edit</button>
         </fieldset>
         </form>
