@@ -1,4 +1,4 @@
-# TODO App with Symfony
+# TODO App
 
 A basic TODO App with Symfony and MySQL using Doctrine.
 
